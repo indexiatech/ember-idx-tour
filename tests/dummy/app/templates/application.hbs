@@ -1,0 +1,15 @@
+<h2 id='title'>Ember Idx Tour</h2>
+
+<div style="float: left;">
+<div class="step1">Step1</div>
+<div class="step2">Step2</div>
+</div>
+
+<p>
+{{em-tour steps=tourSteps1 start-if=startTour1 on-start="onStart" on-show="onShow" on-end="onEnd" on-next="onNext" on-prev="onPrev"}}
+<button {{action 'start'}}>start a tour!</button>
+</p>
+
+<p style="padding: 100px;">
+</p>
+{{outlet}}
