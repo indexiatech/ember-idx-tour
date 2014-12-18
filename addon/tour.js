@@ -21,6 +21,12 @@ export default Em.Component.extend({
     container: 'body',
 
     /**
+    * If true, steps bound to elements that do not exist will be rendered in the center of the window,
+    * otherwise the step will be skipped.
+    **/
+    orphan: true,
+
+    /**
     * If true will display a dark backdrop behind the popover and its element but will highlight the current step.
     **/
     backdrop: true,
@@ -28,7 +34,7 @@ export default Em.Component.extend({
     /**
     * Add padding to the step being currently highligted
     **/
-    'backdrop-padding': 5,
+    'backdrop-padding': 0,
 
     /**
     * An array of objects representing the steps to be included in the tour.
@@ -89,6 +95,7 @@ export default Em.Component.extend({
         var tour = new Tour({
             name: get(this, 'name'),
             steps: get(this, 'steps'),
+            orphan: get(this, 'orphan'),
             backdrop: get(this, 'backdrop'),
             backdropPadding: get(this, 'backdrop-padding'),
             component: this,
@@ -130,7 +137,6 @@ export default Em.Component.extend({
 
     observeStartIf: function() {
         if (this.get('start-if')) {
-            this.get('tour').init();
             this.get('tour').restart();
             this.set('start-if', undefined);
         }
