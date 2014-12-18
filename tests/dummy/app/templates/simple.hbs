@@ -1,0 +1,44 @@
+<h2 id='title'>Ember Idx Tour</h2>
+
+<div style="float: left;">
+    <div class="step1">Step1</div>
+    <div class="step2">Step2</div>
+</div>
+
+<br/><br/>
+<p>
+{{em-tour steps=tourSteps1 start-if=startTour1 on-start="onStart" on-show="onShow" on-end="onEnd" on-next="onNext" on-rev="onPrev"}}
+<button {{action 'start'}}>start a tour!</button>
+</p>
+
+<h2>Markup</h2>
+<div class="well line-example">
+    <pre><code class="handlebars">
+        &lt;div style="float: left;"&gt;
+            &lt;div class="step1">Step1&lt;/div&gt;
+            &lt;div class="step2">Step2&lt;/div&gt;
+        &lt;/div;&gt;
+        \{{em-tour steps=tourSteps1 start-if=startTour1 on-start="onStart" on-show="onShow" on-end="onEnd" on-next="onNext" on-rev="onPrev"}}
+    &lt;button \{{action 'start'}}&gt;start a tour!&lt;/button&gt;
+    </code></pre>
+</div>
+
+<h2>Controller</h2>
+
+<div class="well line-example">
+    <pre><code class="javascript">
+export default Em.Controller.extend({
+    tourSteps1: [
+        {
+            element: ".step1",
+            title: "Title of my step",
+            content: "Content of my step"
+        },
+        {
+            element: ".step2",
+            title: "Title of my step",
+            content: "Content of my step"
+        }
+    ]
+});
+</code></pre></div>

@@ -2,6 +2,8 @@
 /* global require, module */
 
 var EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+var mergeTrees = require('broccoli-merge-trees');
+var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberAddon();
 
@@ -18,4 +20,14 @@ var app = new EmberAddon();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 app.import('bower_components/bootstrap/dist/css/bootstrap.css');
-module.exports = app.toTree();
+app.import('bower_components/fontawesome/css/font-awesome.min.css');
+app.import('bower_components/highlightjs/highlight.pack.js');
+app.import('bower_components/highlightjs/styles/tomorrow.css');
+
+var extraAssets = pickFiles('bower_components/fontawesome', {
+    srcDir: '/',
+    files: ['**/*.woff', '**/*.eot', '**/*.svg', '**/*.ttf'],
+    destDir: '/'
+});
+
+module.exports = mergeTrees([app.toTree(), extraAssets])
