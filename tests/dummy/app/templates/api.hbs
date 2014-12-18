@@ -1,0 +1,51 @@
+<h1>\{{em-tour}} API</h1>
+
+<h2>Component Attributes</h2>
+<p>
+<table class="table table-striped">
+    <tr><th>Param name</th><th>Description</th><th>Default</th></tr>
+    <tr><td>name</td><td>The name of the tour</td><td>tour</td></tr>
+    <tr><td>container</td><td>Appends the step popover to a specific element</td><td>body</td></tr>
+    <tr><td>orphan</td><td>If true, steps bound to elements that do not exist will be rendered in the center of the window, otherwise step will be ignored</td><td>true</td></tr>
+    <tr><td>backdrop</td><td>If true will display a dark backdrop behind the popover and its element but will highlight the current step.</td><td>true</td></tr>
+    <tr><td>backdrop-padding</td><td>Add padding to the step being currently highligted</td><td>0</td></tr>
+    <tr><td>steps</td><td>An array of objects representing the steps to be included in the tour.</td><td>[]</td></tr>
+    <tr><td>start-if</td><td>The tour will start if set to true</td><td>none</td></tr>
+</table>
+</p>
+
+<h2>Component Actions</h2>
+<p>
+<table class="table table-striped">
+    <tr><th>Action Name </th><th>Description</th><th>Params</th></tr>
+    <tr><td>on-start</td><td>The action to invoke when tour starts</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-end</td><td>The action to invoke when tour ends</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-show</td><td>The action to invoke before each step is shown</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-shown</td><td>The action to invoke after each step is shown</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-hide</td><td>The action to invoke before each step is hidden</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-hidden</td><td>The action to invoke after each step is hidden</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-next</td><td>The action to invoke when the next step is asked for</td><td>Component, Tour, Step</td></tr>
+    <tr><td>on-prev</td><td>The action to invoke when the previous step is asked for</td><td>Component, Tour, Step</td></tr>
+</table>
+</p>
+
+<h2>Step</h2>
+
+<p>
+<div class="well line-example">
+    <pre><code class="javascript">
+    tourSteps1: [
+        {
+            element: ".elementId", //Element the step is bound to, can be any jquery selector
+            title: "Title of my step",
+            content: "Content of my step",
+            backdrop: true //can define backdrop per step
+        }
+    ]
+    </code></pre>
+</div>
+</p>
+
+<p>
+For more info please see <a href="http://bootstraptour.com/api/">Bootstrap Tour API</a>
+</p>
