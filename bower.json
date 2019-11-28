@@ -2,9 +2,9 @@
   "name": "ember-idx-tour",
   "dependencies": {
     "handlebars": "~1.3.0",
-    "jquery": "^1.11.1",
-    "ember": "1.8.1",
-    "ember-data": "1.0.0-beta.12",
+    "jquery": "~1.12.1",
+    "ember": "2.18.2",
+    "ember-data": "~3.2.0",
     "ember-resolver": "~0.1.10",
     "loader.js": "stefanpenner/loader.js#1.0.1",
     "ember-cli-shims": "stefanpenner/ember-cli-shims#0.0.3",
@@ -17,6 +17,6 @@
   "devDependencies": {
     "highlightjs": "~8.4.0",
     "fontawesome": "~4.2.0",
-    "bootstrap": "~3.3.1"
+    "bootstrap": "^4.3.1"
   }
 }
